@@ -106,11 +106,11 @@ class WechatJssdk {
       if ($ticket) {
         /////////////////////////////////////////////////
         // memcache                                    //
-        // $mem->set($pre.'ticket', $ticket, 0, 7200); //
+        // $mem->set($pre.'ticket', $ticket, 0, 7000); //
         /////////////////////////////////////////////////
         
         //memcahed 
-        $mem->set($pre.'ticket', $ticket, time()+7200);
+        $mem->set($pre.'ticket', $ticket, time()+7000);
 
       }
     }
@@ -147,13 +147,13 @@ class WechatJssdk {
       if($access_token){
         ////////////////////////////////////////////////////////////
         // memcahe                                                //
-        // $mem->set($pre.'access_token', $access_token, 0,7200); //
+        // $mem->set($pre.'access_token', $access_token, 0,7000); //
         ////////////////////////////////////////////////////////////
 
         //////////////
         // memcahed //
         //////////////
-        $mem->set($pre.'access_token', $access_token, time()+7200);
+        $mem->set($pre.'access_token', $access_token, time()+7000);
       }  
     }
     return $access_token;
